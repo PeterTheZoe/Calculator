@@ -1,10 +1,8 @@
 #pragma once
 #include <iostream>
 
-//I can create an array for multiple input
-// user 
-void userInput();
-int addFunc();
+//Need user input validation in order to check if user input is valid
+void addFunc();
 char userSelectedOperator; 
 int x;
 int y;
@@ -18,43 +16,44 @@ void userInput() {
 	std::cin >> y;
 }
 
-int addFunc()
+void addFunc()
 {
-	return x + y;
+
+	std::cout << "Your answer is: " << x + y << std::endl;
 }
 
-int subFunc()
+void subFunc()
 {
-	return x - y;
+	std::cout << "Your answer is: " << x - y << std::endl;
 }
 
-int divFunc() //Prints quotient and remainder
+void divFunc() //Prints quotient and remainder
 {
 	int leftOver = x % y;
+	std::cout << "Your answer is: " << x / y << std::endl;
 	if (leftOver > 0) {
 		std::cout << "Remainder is: " << leftOver;
 	}
-	return x / y;
 }
 
-int mulFunc()
+void mulFunc()
 {
-	return x * y; 
+	std::cout << "Your answer is: " << x * y << std::endl; 
 }
 
-int arithmeticFunc() //Does math operation based on selected operator
+void arithmeticFunc() //Does math operation based on selected operator
 {
 	if (userSelectedOperator == '+') {
-		return addFunc();
+		 addFunc();
 	}
 	else if (userSelectedOperator == '-') {
-		return subFunc();
+		 subFunc();
 	}
 	else if (userSelectedOperator == '*') {
-		return mulFunc();
+		 mulFunc();
 	}
-	else if (userSelectedOperator == '%') {
-		return divFunc();
+	else if (userSelectedOperator == '/') {
+		 divFunc();
 	}
 }
 
